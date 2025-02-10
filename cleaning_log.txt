@@ -1,0 +1,14 @@
+
+Data Cleaning Log:
+1. Initial rows: 16399
+2. Removed duplicates: 0
+3. Final valid rows: 16399
+4. Columns cleaned: ['Profile Id', 'Opportunity Id', 'Opportunity Name', 'Opportunity Category', 'Opportunity End Date', 'Gender', 'City', 'State', 'Country', 'Zip Code', 'Graduation Date(YYYY MM)', 'Current Student Status', 'Current/Intended Major', 'Status Description', 'Apply Date', 'Opportunity Start Date', 'Reward Amount', 'Badge Id', 'Badge Name', 'Skill Points Earned', 'Skills Earned']
+5. Actions Taken:
+   - Filled missing values in categorical columns with mode or 'Unknown'.
+   - Filled missing values in numeric columns with median.
+   - Removed duplicate rows.
+   - Standardized date formats and gender categories.
+   - Validated numeric columns to ensure non-negative values.
+   - Validated categorical columns to ensure consistency.
+   - Cross-checked logical relationships between dates.
