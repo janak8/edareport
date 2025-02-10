@@ -3,15 +3,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Set Streamlit page configuration (must be first command)
 st.set_page_config(
-    page_title="My App",  # Title shown in the browser tab
-    page_icon="thumbnail.png"  # URL to your custom favicon
+    page_title="EDA Report Dashboard",
+    page_icon="thumbnail.png",  # Ensure this file exists in the same directory
+    layout="wide"
 )
-
-
-
-# Set Streamlit page configuration
-st.set_page_config(page_title="EDA Report Dashboard", layout="wide")
 
 # Title and introduction
 st.title("Exploratory Data Analysis (EDA) Report by Janak Adhikari")
@@ -36,8 +33,11 @@ try:
     st.write("**Column Names:**", df.columns.tolist())
     st.write("**Data Types:**")
     st.write(df.dtypes)
+except FileNotFoundError:
+    st.error("Error: 'cleaned_data.csv' not found. Please upload the dataset.")
+    st.stop()
 except Exception as e:
-    st.error("Error loading dataset. Make sure 'cleaned_data.csv' exists.")
+    st.error(f"An error occurred while loading the dataset: {e}")
     st.stop()
 
 # Handling missing values
@@ -45,7 +45,7 @@ st.header("Step 2: Handling Missing Values")
 st.write("Before handling missing values:")
 st.write(df.isnull().sum())
 
-# Filling missing values
+# Fill missing values in Apply Date if it exists
 if "Apply Date" in df.columns:
     df['Apply Date'].fillna("Not Applied", inplace=True)
     st.write("After handling missing values:")
@@ -59,10 +59,12 @@ st.pyplot(fig)
 
 # Cleaning categorical variables
 st.header("Step 3: Cleaning Categorical Variables")
-if "Gender" in df.columns and "Current Student Status" in df.columns:
+if "Gender" in df.columns:
     df['Gender'] = df['Gender'].str.lower().str.strip()
+if "Current Student Status" in df.columns:
     df['Current Student Status'] = df['Current Student Status'].str.title()
-    st.write("Categorical variables cleaned and standardized.")
+
+st.write("Categorical variables cleaned and standardized.")
 
 # Visualizing categorical distributions
 st.header("Step 4: Categorical Data Distributions")
