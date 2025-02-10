@@ -8,7 +8,7 @@ st.set_page_config(
     page_icon="thumbnail.png"  # URL to your custom favicon
 )
 
-st.title("Welcome to My Exploratory Data Analysis Report")
+
 
 # Set Streamlit page configuration
 st.set_page_config(page_title="EDA Report Dashboard", layout="wide")
