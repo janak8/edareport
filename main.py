@@ -7,7 +7,7 @@ import seaborn as sns
 st.set_page_config(page_title="EDA Report Dashboard", layout="wide")
 
 # Title and introduction
-st.title("Exploratory Data Analysis (EDA) Report")
+st.title("Exploratory Data Analysis (EDA) Report by Janak Adhikari")
 st.markdown("""
 ### Introduction
 Welcome to the EDA Report Dashboard! This interactive app provides a detailed exploratory data analysis
