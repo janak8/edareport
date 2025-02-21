@@ -27,7 +27,7 @@ of the dataset. We will clean the data, handle missing values, and visualize pat
 # Load dataset
 st.header("Step 1: Load and Preview Dataset")
 try:
-    df = pd.read_csv("cleaned_data.csv")
+    df = pd.read_excel("OpportunityWiseData2.xlsx")
     st.write("### Dataset Overview", df.head())
     st.write("**Dataset Shape:**", df.shape)
     st.write("**Column Names:**", df.columns.tolist())
