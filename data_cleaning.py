@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load data
-df = pd.to_excel('Opportunity Wise Data.csv')
+df = pd.to_excel('OpportunityWiseData2.xlsx')
 print(f"Initial rows: {len(df)}")
 
 # 1. Explore the Dataset
